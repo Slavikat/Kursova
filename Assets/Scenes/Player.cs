@@ -9,8 +9,6 @@ public class Player : MonoBehaviour
 
     public Route childNodeList;
 
-    int routePosition=0;
-
     int routePosition;
 
     public int steps;
