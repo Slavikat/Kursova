@@ -7,8 +7,6 @@ public class Player : MonoBehaviour
 
     public Route currentRoute;
 
-    public Route childNodeList;
-
     int routePosition;
 
     public int steps;
@@ -33,8 +31,6 @@ public class Player : MonoBehaviour
             //}
         }
     }
-
-
 
     IEnumerator Move()
     {
