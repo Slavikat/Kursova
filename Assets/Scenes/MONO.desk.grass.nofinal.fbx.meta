@@ -1,15 +1,17 @@
 fileFormatVersion: 2
-guid: 5bdb1ff09a1684147967ddadba309b32
+guid: 7f8f842a83808af4caea1f4e53be146c
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Material.002
-    2100002: Material.001
+    2100000: 10450_Rectangular_Grass_Patch_v1
+    2100002: Material.002
+    2100004: Material.004
+    2100006: Material.000
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Plane
+    4300000: 10450_Rectangular_Grass_Patch_v1_iterations-2
   externalObjects: {}
   materials:
     importMaterials: 1
