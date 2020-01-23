@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MoveToChoose : MonoBehaviour
+public class GoToLVL_1 : MonoBehaviour
 {
     public GameObject NewGame;
-    public GameObject ChoosePlayer;
+    public GameObject Choose;
+    public GameObject Help;
+    public GameObject Exit;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,15 +21,17 @@ public class MoveToChoose : MonoBehaviour
         
     }
 
-    public void ChoosePlay()
+    public void ChoosePlayers()
     {
+        Help.SetActive(false);
+        Exit.SetActive(false);
         NewGame.SetActive(false);
-        ChoosePlayer.SetActive(true);
+        Choose.SetActive(true);
     }
 
     public void BackToMenu()
     {
         NewGame.SetActive(true);
-        ChoosePlayer.SetActive(false);
+        Choose.SetActive(false);
     }
 }
