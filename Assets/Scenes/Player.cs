@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && !isMoving)
         {
-            steps = Random.Range(1, 7);
+            steps = DiceNumberTextScript.diceNumber;
             Debug.Log(" Dice Rolled " + steps);
 
             StartCoroutine(Move());

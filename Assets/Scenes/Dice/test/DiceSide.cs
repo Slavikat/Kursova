@@ -1,0 +1,32 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class DiceSide : MonoBehaviour
+{
+    bool onGround;
+    public int sideValue;
+
+
+    void OnTriggerStay(Collider col)
+    {
+        if(col.tag=="DiceGround")
+        {
+            onGround = true;
+        }
+    }
+
+    void OnTriggerExit(Collider col)
+    {
+        if (col.tag == "DiceGround")
+        {
+            onGround = false;
+        }
+    }
+
+    public bool getOnGround()
+    {
+        return onGround;
+    }
+
+}
