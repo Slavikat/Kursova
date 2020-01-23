@@ -22,12 +22,12 @@ public class MoveToChoose : MonoBehaviour
     public void ChoosePlay()
     {
         NewGame.SetActive(false);
-        ChoosePlay.SetActive(true);
+        ChoosePlayer.SetActive(true);
     }
 
     public void BackToMenu()
     {
         NewGame.SetActive(true);
-        ChoosePlay.SetActive(false);
+        ChoosePlayer.SetActive(false);
     }
 }
