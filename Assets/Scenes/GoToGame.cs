@@ -8,6 +8,7 @@ public class GoToGame : MonoBehaviour
     public GameObject Registration;
     static int i=0;
     public InputField InName;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,27 @@ public class GoToGame : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void setColorR()
+    {
+        Utils("red");
+    }
+    public void setColorG()
+    {
+        Utils("green");
+    }
+    public void setColorB()
+    {
+        Utils("blue");
+    }
+    public void setColorY()
+    {
+        Utils("yelow");
+    }
+    public void Utils(string color)
+    {
+        PlayerData.Color[i] = color;
     }
 
     public void GoGame()
@@ -37,6 +59,9 @@ public class GoToGame : MonoBehaviour
         }
        
     }
+
+
+
 
    /* public void BackToRegistration()
     {

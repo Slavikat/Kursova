@@ -40,6 +40,7 @@ public class MoveTo : MonoBehaviour
     {
         PlayerData.sumPlayer = pl;
         PlayerData.Name = new string[pl];
+        PlayerData.Color = new string[pl];
         ChoosePlayer.SetActive(false);
         UserRegistration.SetActive(true);
     }
