@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class ControlRegistration : MonoBehaviour
+using UnityEngine.UI;
+public class GoToTheGame : MonoBehaviour
 {
+    public GameObject RunGame;
+    public GameObject Registration;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,4 +17,11 @@ public class ControlRegistration : MonoBehaviour
     {
         
     }
+
+    public void RunThisGame()
+    {
+        RunGame.SetActive(false);
+        Registration.SetActive(true);
+    }
+
 }

@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class GoToGame : MonoBehaviour
 {
     public GameObject RunGame;
     public GameObject Registration;
+    public GameObject Current;
+    public GameObject Next;
     static int i=0;
     public InputField InName;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +38,7 @@ public class GoToGame : MonoBehaviour
     }
     public void setColorY()
     {
-        Utils("yelow");
+        Utils("yellow");
     }
     public void Utils(string color)
     {
@@ -44,29 +47,27 @@ public class GoToGame : MonoBehaviour
 
     public void GoGame()
     {
-        
-            if(i< PlayerData.sumPlayer)
-        { 
-            PlayerData.Name[i] = InName.text;
-                InName.text = string.Empty;
-       //     InName.text =i.ToString();
-                i++;
-       }
-        if(i == PlayerData.sumPlayer)
+
+        if (i < PlayerData.sumPlayer)
         {
-        RunGame.SetActive(false);
-        Registration.SetActive(true);
+            PlayerData.Name[i] = InName.text;
+            InName.text = string.Empty;
+            //     InName.text =i.ToString();
+            i++;
         }
-       
+
+        if (i == PlayerData.sumPlayer)
+        {
+            RunGame.SetActive(false);
+            Registration.SetActive(false);
+            Current.SetActive(false);
+            Next.SetActive(true);
+        }
     }
-
-
-
-
-   /* public void BackToRegistration()
-    {
-        RunGame.SetActive(true);
-        Registration.SetActive(false);
-    }*/
+    /* public void BackToRegistration()
+     {
+         RunGame.SetActive(true);
+         Registration.SetActive(false);
+     }*/
 
 }
