@@ -11,6 +11,7 @@ public class GoToGame : MonoBehaviour
     public GameObject Next;
     static int i=0;
     public InputField InName;
+    public GameObject PanelZ;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +49,8 @@ public class GoToGame : MonoBehaviour
     public void GoGame()
     {
 
+          
+       // PanelZ.localScale = new Vector3(0, 0);
         if (i < PlayerData.sumPlayer)
         {
             PlayerData.Name[i] = InName.text;
@@ -62,6 +65,10 @@ public class GoToGame : MonoBehaviour
             Registration.SetActive(false);
             Current.SetActive(false);
             Next.SetActive(true);
+            Image img = GameObject.Find("Panel (1)").GetComponent<Image>();
+        
+            img.color = UnityEngine.Color.clear;
+            //     PanelZ.color.a = 0;
         }
     }
     /* public void BackToRegistration()
