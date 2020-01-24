@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TimerFirst : MonoBehaviour
+public class TimerGlobal : MonoBehaviour
 {
     public Text timerText;
-    private float startTime;
+    private float startT;
     private bool stopTime = true;
     private bool finished = false;
     // Start is called before the first frame update
     void Start()
     {
-        startTime = Time.time;
+        startT = Time.time;
     }
 
     // Update is called once per frame
@@ -23,13 +23,14 @@ public class TimerFirst : MonoBehaviour
             return;
 
         }
-        
-        startTime = 60;
-        float t = startTime - Time.time;
+
+        startT = 2400;
+        float t = startT - Time.time;
 
         if (t == 0)
         {
             stopTime = false;
+            
         }
 
         string minutes = ((int)t / 60).ToString();
@@ -38,12 +39,10 @@ public class TimerFirst : MonoBehaviour
         timerText.text = minutes + ":" + seconds;
     }
 
-
-
     public void Finnish()
     {
         finished = true;
-        timerText.color = Color.red;
+        timerText.color = Color.yellow;
     }
 
 }
