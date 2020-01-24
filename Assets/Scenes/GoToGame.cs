@@ -62,7 +62,7 @@ public class GoToGame : MonoBehaviour
         if (i == PlayerData.sumPlayer)
         {
             RunGame.SetActive(false);
-            Registration.SetActive(false);
+            //Registration.SetActive(false);
             Current.SetActive(false);
             Next.SetActive(true);
             Image img = GameObject.Find("Panel (1)").GetComponent<Image>();
@@ -70,11 +70,9 @@ public class GoToGame : MonoBehaviour
             img.color = UnityEngine.Color.clear;
             //     PanelZ.color.a = 0;
         }
+
+        
     }
-    /* public void BackToRegistration()
-     {
-         RunGame.SetActive(true);
-         Registration.SetActive(false);
-     }*/
+   
 
 }

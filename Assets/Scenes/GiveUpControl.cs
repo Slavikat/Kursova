@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GiveUpControl : MonoBehaviour
 {
+    public GameObject GiveUp;
+    public GameObject End;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +16,22 @@ public class GiveUpControl : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void GiveUpMenu()
+    {
+        GiveUp.SetActive(false);
+        End.SetActive(true);
+    }
+
+    public void ReturnToGame()
+    {
+        GiveUp.SetActive(true);
+        End.SetActive(false);
+    }
+
+    public void EndGame()
+    {
+        Application.Quit();
     }
 }
