@@ -9,6 +9,10 @@ public class PlayerData : MonoBehaviour
     public static string [] Name;
     public static string[] Color;
     public static int[] Score;
+    public static int[] Klitynka;
+    public static string[] Pola;
+    public static bool stop;
+    public static int play;
 
     // Start is called before the first frame update
     void Start()

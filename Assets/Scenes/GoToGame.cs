@@ -6,12 +6,15 @@ using UnityEngine.UI;
 public class GoToGame : MonoBehaviour
 {
     public GameObject RunGame;
-    public GameObject Registration;
     public GameObject Current;
     public GameObject Next;
     static int i=0;
     public InputField InName;
     public GameObject PanelZ;
+    public GameObject Pl1;
+    public GameObject Pl2;
+    public GameObject Pl3;
+    public GameObject Pl4;
 
     // Start is called before the first frame update
     void Start()
@@ -61,14 +64,30 @@ public class GoToGame : MonoBehaviour
 
         if (i == PlayerData.sumPlayer)
         {
+            
+
             RunGame.SetActive(false);
-            //Registration.SetActive(false);
             Current.SetActive(false);
             Next.SetActive(true);
+            Pl1.SetActive(true);
+            Pl2.SetActive(true);
+
+            if (PlayerData.sumPlayer >= 3)
+            {
+                  Pl3.SetActive(true);
+                if (PlayerData.sumPlayer == 4)
+                {
+                     Pl4.SetActive(true);
+                }
+            }
+
+
+          
+           
             Image img = GameObject.Find("Panel (1)").GetComponent<Image>();
         
             img.color = UnityEngine.Color.clear;
-            //     PanelZ.color.a = 0;
+            
         }
 
         

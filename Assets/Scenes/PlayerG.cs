@@ -10,42 +10,44 @@ public class PlayerG : MonoBehaviour
 
     public int steps;
 
-    bool isMoving;
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && !isMoving)
+        if (Moved.plG)
         {
-            steps = Random.Range(1, 7);
+            
+            steps = DiceNumberTextScript.diceNumber;
             Debug.Log("Dice Rolled " + steps);
 
             StartCoroutine(Move());
+            Moved.plG = false;
         }
     }
-    IEnumerator Move()
-    {
-        if(isMoving)
+        IEnumerator Move()
         {
-            yield break;
-        }
-        isMoving = true;
+            if (Moved.isMoving)
+            {
+                yield break;
+            }
+        Moved.isMoving = true;
 
-        while(steps>0)
+            while (steps > 0)
+            {
+                routePosition++;
+                routePosition %= currentRoute.childNodeList.Count;
+                Vector3 nextPos = currentRoute.childNodeList[routePosition].position;
+                while (MoveToNextNode(nextPos)) { yield return null; }
+
+                yield return new WaitForSeconds(0.1f);
+                steps--;
+                //routePosition++;
+            }
+        PlayerData.stop = true;
+        Moved.isMoving = false;
+        }
+
+        bool MoveToNextNode(Vector3 goal)
         {
-            routePosition++;
-            routePosition %= currentRoute.childNodeList.Count;
-            Vector3 nextPos = currentRoute.childNodeList[routePosition].position;
-            while (MoveToNextNode(nextPos)) { yield return null; }
-
-            yield return new WaitForSeconds(0.1f);
-            steps--;
-            //routePosition++;
+            return goal != (transform.position = Vector3.MoveTowards(transform.position, goal, 2f * Time.deltaTime));
         }
-
-        isMoving = false;
-    }
-
-    bool MoveToNextNode(Vector3 goal)
-    {
-        return goal != (transform.position = Vector3.MoveTowards(transform.position, goal, 2f * Time.deltaTime));
-    }
+   
 }

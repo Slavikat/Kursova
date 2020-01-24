@@ -10,24 +10,27 @@ public class PlayerY : MonoBehaviour
 
     public int steps;
 
-    bool isMoving;
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !isMoving)
+        if (Moved.plY)
         {
-            steps = Random.Range(1, 7);
+            
+            steps = DiceNumberTextScript.diceNumber;
             Debug.Log("Dice Rolled " + steps);
 
             StartCoroutine(Move());
+            Moved.plY = false;
         }
+       
     }
-    IEnumerator Move()
+        IEnumerator Move()
     {
-        if (isMoving)
+        if (Moved.isMoving)
         {
             yield break;
         }
-        isMoving = true;
+        Moved.isMoving = true;
 
         while (steps > 0)
         {
@@ -40,8 +43,8 @@ public class PlayerY : MonoBehaviour
             steps--;
             //routePosition++;
         }
-
-        isMoving = false;
+        PlayerData.stop = true;
+        Moved.isMoving = false;
     }
 
     bool MoveToNextNode(Vector3 goal)

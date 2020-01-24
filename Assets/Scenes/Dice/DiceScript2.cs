@@ -29,7 +29,7 @@ public class DiceScript2 : MonoBehaviour
 			float dirZ = Random.Range(0, 500);
 
 			
-					transform.position = new Vector3(4.473f, 1.52f, -5.15f);
+					transform.position = new Vector3(17.53f, 2.79f, 14.87f);
 				
 
 			transform.rotation = Quaternion.identity;
