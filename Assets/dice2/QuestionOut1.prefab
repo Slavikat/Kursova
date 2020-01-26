@@ -407,7 +407,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.9, y: 71.13}
+  m_AnchoredPosition: {x: 19, y: 99}
   m_SizeDelta: {x: 844.99, y: 163.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4529771380483562513
@@ -438,11 +438,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
-    m_MaxSize: 40
+    m_MaxSize: 45
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -496,6 +496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   changeText: {fileID: 4529771380483562512}
   perevirka: {fileID: 4529771382086956489}
+  per2: {fileID: 0}
   points: 10
 --- !u!1 &4529771380588296444
 GameObject:
@@ -905,6 +906,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   changeText: {fileID: 4529771380483562512}
   perevirka: {fileID: 4529771382086956489}
+  per2: {fileID: 0}
   points: 10
 --- !u!1 &4529771382086956495
 GameObject:

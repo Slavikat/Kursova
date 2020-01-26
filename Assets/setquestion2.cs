@@ -7,8 +7,10 @@ using UnityEngine.UI;
 public class setquestion2 : MonoBehaviour
 {
     public Text changeText;
-    public Text perevirka;
-   // public string[] text;
+    public Text perevirka, per2;
+   // public Image img;
+
+  
 
     bool newText=true;
     int k;
@@ -23,11 +25,24 @@ public class setquestion2 : MonoBehaviour
 
     string color = "braun";
 
+    int temp;
+    // string v1, v2, v3, v4, v5;
+
+    public static string[] v1 = new string[10];
+    public static string[] v2 = new string[10];
+    public static string[] v3 = new string[10];
+    public static string[] v4 = new string[10];
+    public static string[] v5 = new string[10];
 
 
     void Start()
     {
-        int temp = Random.Range(1, 10);
+
+        temp = Random.Range(1, 10);
+     
+      
+
+
 
         /*
         changeText.text= System.IO.File.ReadAllText("Assets/atmo/"+temp+ ".txt");
@@ -39,11 +54,15 @@ public class setquestion2 : MonoBehaviour
         k = int.Parse(vidpov);
         //perevirka.text = k.ToString();
         */
-        
-         changeText.text = System.IO.File.ReadAllText("Assets/capital/" + temp + ".txt");
+
+        changeText.text = System.IO.File.ReadAllText("Assets/capital/" + temp + ".txt");
          vidpov = System.IO.File.ReadAllText("Assets/vidpov_cap/" + temp + ".txt");
          k = int.Parse(vidpov);
-         
+
+
+
+        // img.sprite = System.IO.File.Open("Assets/photo/" + temp + ".png");
+
         /*
         switch (color)
         {
@@ -85,6 +104,8 @@ public class setquestion2 : MonoBehaviour
         perevirka.text = vidpov;
         */
 
+        
+
     }
 
       public void onClick1()
@@ -124,8 +145,16 @@ public class setquestion2 : MonoBehaviour
             if (points < 5) { points = 0; } 
         }
 
+
+        //  perevirka.text = btn.ToString();
+
         
-         perevirka.text = points.ToString();
+        perevirka.text = k.ToString();
+       // per2.text = .ToString();
+        btn = 0;
+        temp = 0;
+        k = 0;
+
 
     }
 

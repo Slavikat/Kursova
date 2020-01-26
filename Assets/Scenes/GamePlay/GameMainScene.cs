@@ -17,6 +17,8 @@ public class GameMainScene : MonoBehaviour
     static int i = 2;
 
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -148,23 +150,43 @@ public class GameMainScene : MonoBehaviour
     { Quest(PlayerData.Klitynka[PlayerData.play]);
         
     }
+
+
+
+    public Text changeText;
+    string vidpov;
+  
+    int temp = Random.Range(1, 10);
+
     public static void Quest(int k)
     {
+/*
 switch (PlayerData.Pola[k])
         {
+            
             case "1":
-
+                changeText.text = System.IO.File.ReadAllText("Assets/litos/" + temp + ".txt");
+                vidpov = System.IO.File.ReadAllText("Assets/vidpov_l/" + temp + ".txt");
                 break;
             case "2":
+                changeText.text = System.IO.File.ReadAllText("Assets/atmo/" + temp + ".txt");
+                vidpov = System.IO.File.ReadAllText("Assets/vidpov_a/" + temp + ".txt");
                 break;
             case "3":
+                changeText.text = System.IO.File.ReadAllText("Assets/hidro/" + temp + ".txt");
+                vidpov = System.IO.File.ReadAllText("Assets/vidpov_h/" + temp + ".txt");
                 break;
+              
             case "4":
+                changeText.text = System.IO.File.ReadAllText("Assets/bio/" + temp + ".txt");
+                vidpov = System.IO.File.ReadAllText("Assets/vidpov_b/" + temp + ".txt");
                 break;
             case "5":
+                changeText.text = System.IO.File.ReadAllText("Assets/capital/" + temp + ".txt");
+                vidpov = System.IO.File.ReadAllText("Assets/vidpov_cap/" + temp + ".txt");
                 break;
             case "p":
-
+            
                 break;
             case "v":
 
@@ -185,5 +207,6 @@ switch (PlayerData.Pola[k])
                 break;
 
         }
+        */
     }
 }
