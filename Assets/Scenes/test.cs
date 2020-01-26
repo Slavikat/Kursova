@@ -16,15 +16,15 @@ public class test : MonoBehaviour
 switch(Moved.player)
             {
                 case 1:
-              //  AddKlit(1);
-            //    PlayerData.play = Moved.player;
+                AddKlit(1);
+                PlayerData.play = 0;
                     Moved.player = 2;
                     Moved.plG = true;
                   
                     break;
                 case 2:
-            //    AddKlit(2);
-           //     PlayerData.play = Moved.player;
+                AddKlit(2);
+                PlayerData.play = 1;
                 if (PlayerData.sumPlayer >= 3)
                 {
                    Moved.player = 3;
@@ -33,8 +33,8 @@ switch(Moved.player)
                 Moved.plR = true;
                     break;
                 case 3:
-             //   AddKlit(3);
-            //    PlayerData.play = Moved.player;
+                AddKlit(3);
+                PlayerData.play =2;
                 if (PlayerData.sumPlayer == 4)
                 {
                     Moved.player = 4;
@@ -45,8 +45,8 @@ switch(Moved.player)
                     
                     break;
                 case 4:
-            //    AddKlit(4);
-             //   PlayerData.play = Moved.player;
+                AddKlit(4);
+                PlayerData.play = 3;
                 Moved.player = 1;
                     Moved.plB = true;
                     
@@ -55,8 +55,8 @@ switch(Moved.player)
     }
     public void AddKlit(int k)
     {
-        PlayerData.Klitynka[k] += DiceNumberTextScript.diceNumber;
-        if (PlayerData.Klitynka[k] > 40) PlayerData.Klitynka[k] -= 40;
+        PlayerData.Klitynka[k-1] += DiceNumberTextScript.diceNumber;
+        if (PlayerData.Klitynka[k-1] > 40) { PlayerData.Klitynka[k] -= 40; }
     }
     // Update is called once per frame
     void Update()

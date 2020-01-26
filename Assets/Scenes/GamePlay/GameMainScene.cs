@@ -82,7 +82,7 @@ public class GameMainScene : MonoBehaviour
         }
         
        
-             PlayerData.Pola[2] = "+5";
+             PlayerData.Pola[2] = "1";
          
              PlayerData.Pola[0] = "st";
              PlayerData.Pola[1] = "1";
@@ -134,11 +134,13 @@ public class GameMainScene : MonoBehaviour
         score1.text = PlayerData.Score[0].ToString();
         // score1.text = PlayerData.Klitynka[0].ToString();
         score2.text = PlayerData.Score[1].ToString();
-      //  score2.text = PlayerData.Klitynka[1].ToString();
+        //  score2.text = PlayerData.Klitynka[1].ToString();
+      //   score3.text = (PlayerData.Klitynka[0] - 1).ToString();
+     //   score4.text = (PlayerData.Klitynka[1] - 1).ToString();
         if (i >= 3)
         {
                      score3.text = PlayerData.Score[2].ToString(); 
-           // score3.text = PlayerData.Klitynka[2].ToString();
+          //  score3.text = PlayerData.Klitynka[2].ToString();
             if (i == 4)
             {
                            score4.text = PlayerData.Score[3].ToString();
@@ -146,84 +148,9 @@ public class GameMainScene : MonoBehaviour
             }
         }
 
-        if (PlayerData.stop)
-        {
-            PlayerData.stop = false;
-            Pyt();
-        }
-        
+       
  
     }
 
-    public static void Pyt()
-    {
-        Quest(PlayerData.Klitynka[PlayerData.play]-1);
-        
-    }
-
-
-
-    public Text changeText;
-    string vidpov;
-  
-    int temp = Random.Range(1, 10);
-
-    public static void Quest(int k)
-    {
-<<<<<<< HEAD
-/*
-switch (PlayerData.Pola[k])
-=======
-       if (PlayerData.Pola[k]== "v")
-        {
-            int rozd = Random.Range(1, 5);
-            PlayerData.Pola[k] = rozd.ToString();
-        }
-            switch (PlayerData.Pola[k])
->>>>>>> b1e1e2daf1b359018b2975cec642dc5609236bfa
-        {
-            
-            case "1":
-                changeText.text = System.IO.File.ReadAllText("Assets/litos/" + temp + ".txt");
-                vidpov = System.IO.File.ReadAllText("Assets/vidpov_l/" + temp + ".txt");
-                break;
-            case "2":
-                changeText.text = System.IO.File.ReadAllText("Assets/atmo/" + temp + ".txt");
-                vidpov = System.IO.File.ReadAllText("Assets/vidpov_a/" + temp + ".txt");
-                break;
-            case "3":
-                changeText.text = System.IO.File.ReadAllText("Assets/hidro/" + temp + ".txt");
-                vidpov = System.IO.File.ReadAllText("Assets/vidpov_h/" + temp + ".txt");
-                break;
-              
-            case "4":
-                changeText.text = System.IO.File.ReadAllText("Assets/bio/" + temp + ".txt");
-                vidpov = System.IO.File.ReadAllText("Assets/vidpov_b/" + temp + ".txt");
-                break;
-            case "5":
-                changeText.text = System.IO.File.ReadAllText("Assets/capital/" + temp + ".txt");
-                vidpov = System.IO.File.ReadAllText("Assets/vidpov_cap/" + temp + ".txt");
-                break;
-            case "p":
-            
-                break;
-            case "+5":
-                PlayerData.Score[PlayerData.play] += 5;
-                break;
-            case "-5":
-                PlayerData.Score[PlayerData.play] -= 5;
-                break;
-            case "+15":
-                PlayerData.Score[PlayerData.play] +=15;
-                break;
-            case "-15":
-                PlayerData.Score[PlayerData.play] -= 15;
-                break;
-            case "st":
-                PlayerData.Score[PlayerData.play] += 5;
-                break;
-
-        }
-        */
-    }
+    
 }
