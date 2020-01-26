@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Route : MonoBehaviour
+public class RouteR : MonoBehaviour
 {
     Transform[] childObjects;
     public List<Transform> childNodeList = new List<Transform>();
     void OnDrawGizmos()
     {
-        Gizmos.color = Color.green;
+        Gizmos.color = Color.red;
 
         FillNodes();
 
-        for(int i=0; i<childNodeList.Count ; i++)
+        for (int i = 0; i < childNodeList.Count; i++)
         {
             Vector3 currentPos = childNodeList[i].position;
-            if(i>0)
+            if (i > 0)
             {
                 Vector3 prevPos = childNodeList[i - 1].position;
                 Gizmos.DrawLine(prevPos, currentPos);
@@ -28,9 +28,9 @@ public class Route : MonoBehaviour
         childNodeList.Clear();
 
         childObjects = GetComponentsInChildren<Transform>();
-        foreach(Transform child in childObjects)
+        foreach (Transform child in childObjects)
         {
-            if(child != this.transform)
+            if (child != this.transform)
             {
                 childNodeList.Add(child);
             }
