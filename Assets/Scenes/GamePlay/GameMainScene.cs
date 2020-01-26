@@ -27,30 +27,20 @@ public class GameMainScene : MonoBehaviour
 
     public void setPlayerInfo()
     {
+        i = PlayerData.sumPlayer;
         name1.text = PlayerData.Name[0];
         name2.text = PlayerData.Name[1];
         if (PlayerData.sumPlayer >= 3)
         {
-            i = 3;
+         //   i = 3;
             name3.text = PlayerData.Name[2];
             if (PlayerData.sumPlayer == 4)
             {
                 name4.text = PlayerData.Name[3];
-                i = 4;
+        //        i = 4;
             }
         }
-        score1.text = "20";
-        score2.text = "20";
-
-        if (i == 3)
-        {
-            score3.text = "20";
-            if (i == 4)
-            {
-                score4.text = "20";
-            }
-        }
-
+       
         PlayerData.Score = new int[i];
         PlayerData.Klitynka = new int[i];
         PlayerData.Pola = new string[40];
@@ -58,7 +48,7 @@ public class GameMainScene : MonoBehaviour
         PlayerData.Score[0] = 20;
         PlayerData.Score[1] = 20;
 
-        if (i == 3)
+        if (i >= 3)
         {
             PlayerData.Score[2] = 20;
             if (i == 4)
@@ -67,10 +57,22 @@ public class GameMainScene : MonoBehaviour
             }
         }
 
+     //   score1.text = PlayerData.Score[0].ToString();
+    //    score2.text = PlayerData.Score[1].ToString();
+
+    //    if (i >= 3)
+    //    {
+     //       score3.text = PlayerData.Score[3].ToString();
+    //        if (i = 4)
+    //        {
+     //           score4.text = PlayerData.Score[4].ToString();
+    //        }
+    //    }
+
         PlayerData.Klitynka[0] = 1;
         PlayerData.Klitynka[1] = 1;
 
-        if (i == 3)
+        if (i >= 3)
         {
             PlayerData.Klitynka[2] = 1;
             if (i == 4)
@@ -78,18 +80,21 @@ public class GameMainScene : MonoBehaviour
                 PlayerData.Klitynka[3] = 1;
             }
         }
-
-        PlayerData.Pola[0] = "st";
-        PlayerData.Pola[1] = "1";
-        PlayerData.Pola[2] = "1";
-        PlayerData.Pola[3] = "5";
-        PlayerData.Pola[4] = "1";
-        PlayerData.Pola[5] = "+5";
-        PlayerData.Pola[6] = "p";
-        PlayerData.Pola[7] = "-5";
-        PlayerData.Pola[8] = "1";
-        PlayerData.Pola[9] = "v";
-        PlayerData.Pola[10] = "p";
+        
+       
+             PlayerData.Pola[2] = "+5";
+         
+             PlayerData.Pola[0] = "st";
+             PlayerData.Pola[1] = "1";
+        //     PlayerData.Pola[2] = "1";
+            PlayerData.Pola[3] = "5";
+            PlayerData.Pola[4] = "1";
+            PlayerData.Pola[5] = "+5";
+            PlayerData.Pola[6] = "p";
+            PlayerData.Pola[7] = "-5";
+            PlayerData.Pola[8] = "1";
+            PlayerData.Pola[9] = "v";
+            PlayerData.Pola[10] = "p";
         PlayerData.Pola[11] = "2";
         PlayerData.Pola[12] = "-5";
         PlayerData.Pola[13] = "2";
@@ -127,13 +132,17 @@ public class GameMainScene : MonoBehaviour
     void Update()
     {
         score1.text = PlayerData.Score[0].ToString();
+        // score1.text = PlayerData.Klitynka[0].ToString();
         score2.text = PlayerData.Score[1].ToString();
-        if (i == 3)
+      //  score2.text = PlayerData.Klitynka[1].ToString();
+        if (i >= 3)
         {
-            score3.text = PlayerData.Score[2].ToString(); 
+                     score3.text = PlayerData.Score[2].ToString(); 
+           // score3.text = PlayerData.Klitynka[2].ToString();
             if (i == 4)
             {
-                score4.text = PlayerData.Score[3].ToString();
+                           score4.text = PlayerData.Score[3].ToString();
+            //    score4.text = PlayerData.Klitynka[3].ToString();
             }
         }
 
@@ -147,7 +156,8 @@ public class GameMainScene : MonoBehaviour
     }
 
     public static void Pyt()
-    { Quest(PlayerData.Klitynka[PlayerData.play]);
+    {
+        Quest(PlayerData.Klitynka[PlayerData.play]-1);
         
     }
 
@@ -160,8 +170,17 @@ public class GameMainScene : MonoBehaviour
 
     public static void Quest(int k)
     {
+<<<<<<< HEAD
 /*
 switch (PlayerData.Pola[k])
+=======
+       if (PlayerData.Pola[k]== "v")
+        {
+            int rozd = Random.Range(1, 5);
+            PlayerData.Pola[k] = rozd.ToString();
+        }
+            switch (PlayerData.Pola[k])
+>>>>>>> b1e1e2daf1b359018b2975cec642dc5609236bfa
         {
             
             case "1":
@@ -188,9 +207,6 @@ switch (PlayerData.Pola[k])
             case "p":
             
                 break;
-            case "v":
-
-                break;
             case "+5":
                 PlayerData.Score[PlayerData.play] += 5;
                 break;
@@ -204,6 +220,7 @@ switch (PlayerData.Pola[k])
                 PlayerData.Score[PlayerData.play] -= 15;
                 break;
             case "st":
+                PlayerData.Score[PlayerData.play] += 5;
                 break;
 
         }
