@@ -559,7 +559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 423fb5a7cbf1ea64a844acebfc1be9e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 772870763}
+  buttonStep: {fileID: 772870763}
 --- !u!114 &133761808 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4100636369551657878, guid: 5e5cc5fee28465d498fa08481bf5ea80,
@@ -2307,7 +2307,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40eba59e682d9134cb664ce6d55e1234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 1613243135}
+  buttonDice: {fileID: 1613243135}
+  buttonStep: {fileID: 772870763}
+  start: 0
 --- !u!1 &708738488
 GameObject:
   m_ObjectHideFlags: 0
@@ -5563,6 +5565,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -77.14
       objectReference: {fileID: 0}
+    - target: {fileID: 1940935842989437131, guid: fa38b0da106867d40ac62d5c415ab8ac,
+        type: 3}
+      propertyPath: buttonStep
+      value: 
+      objectReference: {fileID: 772870763}
     - target: {fileID: 1940935842992214669, guid: fa38b0da106867d40ac62d5c415ab8ac,
         type: 3}
       propertyPath: m_IsActive
@@ -5613,6 +5620,11 @@ PrefabInstance:
       propertyPath: currentRoute
       value: 
       objectReference: {fileID: 590081622}
+    - target: {fileID: 1940935843384465067, guid: fa38b0da106867d40ac62d5c415ab8ac,
+        type: 3}
+      propertyPath: buttonDice
+      value: 
+      objectReference: {fileID: 1613243135}
     - target: {fileID: 1940935843460237497, guid: fa38b0da106867d40ac62d5c415ab8ac,
         type: 3}
       propertyPath: m_Enabled
@@ -5653,6 +5665,11 @@ PrefabInstance:
       propertyPath: panel1
       value: 
       objectReference: {fileID: 1435805651}
+    - target: {fileID: 1940935843599643613, guid: fa38b0da106867d40ac62d5c415ab8ac,
+        type: 3}
+      propertyPath: buttonDice
+      value: 
+      objectReference: {fileID: 1613243135}
     - target: {fileID: 1940935844054403874, guid: fa38b0da106867d40ac62d5c415ab8ac,
         type: 3}
       propertyPath: GameScene3
@@ -5683,6 +5700,11 @@ PrefabInstance:
       propertyPath: currentRoute
       value: 
       objectReference: {fileID: 2008264345}
+    - target: {fileID: 1940935844054403874, guid: fa38b0da106867d40ac62d5c415ab8ac,
+        type: 3}
+      propertyPath: buttonDice
+      value: 
+      objectReference: {fileID: 1613243135}
     - target: {fileID: 1940935844435104134, guid: fa38b0da106867d40ac62d5c415ab8ac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5783,6 +5805,11 @@ PrefabInstance:
       propertyPath: currentRoute
       value: 
       objectReference: {fileID: 75162249}
+    - target: {fileID: 1940935844512727599, guid: fa38b0da106867d40ac62d5c415ab8ac,
+        type: 3}
+      propertyPath: buttonDice
+      value: 
+      objectReference: {fileID: 1613243135}
     - target: {fileID: 7792976803451957238, guid: fa38b0da106867d40ac62d5c415ab8ac,
         type: 3}
       propertyPath: m_Center.y
@@ -8410,6 +8437,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 292
       objectReference: {fileID: 0}
+    - target: {fileID: 7996144734420310879, guid: bd8414143c208674f98129faa5be5754,
+        type: 3}
+      propertyPath: buttonDice
+      value: 
+      objectReference: {fileID: 1613243135}
+    - target: {fileID: 7996144734420310879, guid: bd8414143c208674f98129faa5be5754,
+        type: 3}
+      propertyPath: buttonStep
+      value: 
+      objectReference: {fileID: 772870763}
     - target: {fileID: 7996144734462804434, guid: bd8414143c208674f98129faa5be5754,
         type: 3}
       propertyPath: m_AnchoredPosition.y
