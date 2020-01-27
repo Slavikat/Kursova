@@ -34,11 +34,11 @@ public class setquestion2 : MonoBehaviour
 
     int temp;
 
-    public static int[] v1 = new int[10];
-    public static int[] v2 = new int[10];
-    public static int[] v3 = new int[10];
-    public static int[] v4 = new int[10];
-    public static int[] v5 = new int[10];
+    public static int[] v1cap = new int[10];
+    public static int[] v2atmo = new int[10];
+    public static int[] v3bio = new int[10];
+    public static int[] v4hidro = new int[10];
+    public static int[] v5litos = new int[10];
 
  
 
@@ -46,27 +46,61 @@ public class setquestion2 : MonoBehaviour
     {
 
 
-        v1[0] = 1;
-        v1[1] = 3;
-        v1[2] = 2;
-        v1[3] = 1;
-        v1[4] = 2;
-        v1[5] = 3;
-        v1[6] = 3;
-        v1[7] = 1;
-        v1[8] = 2;
-        v1[9] = 3;
+        v1cap[0] = 1;
+        v1cap[1] = 3;
+        v1cap[2] = 2;
+        v1cap[3] = 1;
+        v1cap[4] = 2;
+        v1cap[5] = 3;
+        v1cap[6] = 3;
+        v1cap[7] = 1;
+        v1cap[8] = 2;
+        v1cap[9] = 3;
 
-        v2[0] = 2;
-        v2[1] = 2;
-        v2[2] = 3;
-        v2[3] = 3;
-        v2[4] = 3;
-        v2[5] = 2;
-        v2[6] = 1;
-        v2[7] = 1;
-        v2[8] = 1;
-        v2[9] = 1;
+        v2atmo[0] = 2;
+        v2atmo[1] = 2;
+        v2atmo[2] = 3;
+        v2atmo[3] = 3;
+        v2atmo[4] = 3;
+        v2atmo[5] = 2;
+        v2atmo[6] = 1;
+        v2atmo[7] = 1;
+        v2atmo[8] = 1;
+        v2atmo[9] = 2;
+
+        v3bio[0] = 3;
+        v3bio[1] = 3;
+        v3bio[2] = 3;
+        v3bio[3] = 2;
+        v3bio[4] = 3;
+        v3bio[5] = 3;
+        v3bio[6] = 1;
+        v3bio[7] = 2;
+        v3bio[8] = 1;
+        v3bio[9] = 2;
+
+        v4hidro[0] = 3;
+        v4hidro[1] = 2;
+        v4hidro[2] = 3;
+        v4hidro[3] = 2;
+        v4hidro[4] = 3;
+        v4hidro[5] = 2;
+        v4hidro[6] = 1;
+        v4hidro[7] = 3;
+        v4hidro[8] = 3;
+        v4hidro[9] = 2;
+
+        v5litos[0] = 2;
+        v5litos[1] = 2;
+        v5litos[2] = 2;
+        v5litos[3] = 2;
+        v5litos[4] = 1;
+        v5litos[5] = 3;
+        v5litos[6] = 3;
+        v5litos[7] = 3;
+        v5litos[8] = 1;
+        v5litos[9] = 1;
+
 
         /*
         changeText.text= System.IO.File.ReadAllText("Assets/atmo/"+temp+ ".txt");
@@ -79,17 +113,17 @@ public class setquestion2 : MonoBehaviour
         //perevirka.text = k.ToString();
         */
 
-       
+
 
     }
     void Update()
     {
         if (start)
         {
-temp = Random.Range(1, 10);
+        temp = Random.Range(1, 10);
+
         changeText.text = System.IO.File.ReadAllText("Assets/capital/" + temp + ".txt");
-        // vidpov = System.IO.File.ReadAllText("Assets/vidpov_cap/" + temp + ".txt");
-        vidpov = v1[temp - 1];
+        vidpov = v1cap[temp - 1];
             start = !start;
         }
         
