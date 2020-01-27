@@ -82,19 +82,19 @@ public class GameMainScene : MonoBehaviour
         }
         
        
-             PlayerData.Pola[2] = "1";
+           
          
-             PlayerData.Pola[0] = "st";
-             PlayerData.Pola[1] = "1";
-        //     PlayerData.Pola[2] = "1";
-            PlayerData.Pola[3] = "5";
-            PlayerData.Pola[4] = "1";
-            PlayerData.Pola[5] = "+5";
-            PlayerData.Pola[6] = "p";
-            PlayerData.Pola[7] = "-5";
-            PlayerData.Pola[8] = "1";
-            PlayerData.Pola[9] = "v";
-            PlayerData.Pola[10] = "p";
+        PlayerData.Pola[0] = "st";
+        PlayerData.Pola[1] = "1";
+        PlayerData.Pola[2] = "1";
+        PlayerData.Pola[3] = "5";
+        PlayerData.Pola[4] = "1";
+        PlayerData.Pola[5] = "+5";
+        PlayerData.Pola[6] = "p";
+        PlayerData.Pola[7] = "-5";
+        PlayerData.Pola[8] = "1";
+        PlayerData.Pola[9] = "v";
+        PlayerData.Pola[10] = "p";
         PlayerData.Pola[11] = "2";
         PlayerData.Pola[12] = "-5";
         PlayerData.Pola[13] = "2";
