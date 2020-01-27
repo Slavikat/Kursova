@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerY : MonoBehaviour
 {
@@ -8,7 +9,8 @@ public class PlayerY : MonoBehaviour
     public GameObject GameScene3;
     public GameObject panel;
     public GameObject panel1;
-  
+    public Button buttonDice;
+
     public GameObject resultat;
   public RouteY currentRoute;
 
@@ -52,6 +54,8 @@ public class PlayerY : MonoBehaviour
         PlayerData.stop = true;
         Perev();
         Moved.isMoving = false;
+
+        buttonDice.interactable = true;
     }
     public void Perev()
     {

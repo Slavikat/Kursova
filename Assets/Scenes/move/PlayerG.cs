@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class PlayerG : MonoBehaviour
 {
+    public Button buttonDice;
+
     public GameObject setQuestion3;
     public GameObject GameScene3;
     public GameObject panel;
@@ -49,7 +53,8 @@ public class PlayerG : MonoBehaviour
         PlayerData.stop = true;
         Perev();
         Moved.isMoving = false;
-        }
+        buttonDice.interactable = true;
+    }
     public void Perev()
     {
         if (PlayerData.stop)

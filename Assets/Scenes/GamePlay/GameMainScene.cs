@@ -15,7 +15,8 @@ public class GameMainScene : MonoBehaviour
     public Text score3;
     public Text score4;
     static int i = 2;
-
+    public Button buttonDice;
+    public Button buttonStep;
 
 
 
@@ -23,6 +24,8 @@ public class GameMainScene : MonoBehaviour
     void Start()
     {
         setPlayerInfo();
+        buttonDice.interactable = true;
+        buttonStep.interactable = false;
     }
 
     public void setPlayerInfo()

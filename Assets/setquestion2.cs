@@ -139,8 +139,8 @@ public class setquestion2 : MonoBehaviour
 
     void Utils()
     {
-setQuestion.SetActive(false);
-    GameScene.SetActive(true);
+     setQuestion.SetActive(false);
+     GameScene.SetActive(true);
      panel.SetActive(false);
     }
     public void onClick2()

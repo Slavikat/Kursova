@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.UI;
+
 public class PlayerR : MonoBehaviour
 {
     public GameObject setQuestion3;
     public GameObject GameScene3;
     public GameObject panel;
     public GameObject panel1;
-
+    public Button buttonDice;
     public GameObject resultat;
     public RouteR currentRoute;
     int routePosition;
@@ -50,6 +52,8 @@ public class PlayerR : MonoBehaviour
         PlayerData.stop = true;
         Perev();
         Moved.isMoving = false;
+
+        buttonDice.interactable = true;
     }
     public void Perev()
     {

@@ -1,11 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class test : MonoBehaviour
 {
 
-    // Start is called before the first frame update
+    public Button buttonStep;
+    public void Update()
+    {
+    //    if (PlayerData.go)
+    //    {
+     //       button.interactable = true;
+     //   }
+     //   else
+     //   {
+    //        button.interactable = false;
+    //    }
+    }
     void Start()
     {
         
@@ -13,7 +25,8 @@ public class test : MonoBehaviour
 
     public void Click()
     {
-switch(Moved.player)
+        buttonStep.interactable = false;
+switch (Moved.player)
             {
                 case 1:
                 AddKlit(1);
@@ -59,8 +72,5 @@ switch(Moved.player)
         if (PlayerData.Klitynka[k-1] > 40) { PlayerData.Klitynka[k] -= 40; }
     }
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }
