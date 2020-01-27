@@ -62,10 +62,5 @@ switch(Moved.player)
     void Update()
     {
         
-            
-           
-
-        
-     
     }
 }

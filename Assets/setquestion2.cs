@@ -7,27 +7,100 @@ using UnityEngine.UI;
 public class setquestion2 : MonoBehaviour
 {
     public Text changeText;
-    public Text perevirka;
-   // public string[] text;
+    public GameObject setQuestion;
+    public GameObject GameScene;
+    public GameObject panel;
+    public GameObject panel1;
+    public GameObject resultat;
+    public static  bool start;
+    bool stop=true;
+
+    // public Image img;
+
+
 
     bool newText=true;
-    int k;
+    static int k;
 
-    string vidpov;
-    public int points=10;
+    static int vidpov;
+    static public int points=10;
 
-    int btn=0;
+    static int btn;
     Random rand = new Random();
   
 
 
     string color = "braun";
 
+    int temp;
 
+    public static int[] v1cap = new int[10];
+    public static int[] v2atmo = new int[10];
+    public static int[] v3bio = new int[10];
+    public static int[] v4hidro = new int[10];
+    public static int[] v5litos = new int[10];
+
+ 
 
     void Start()
     {
-        int temp = Random.Range(1, 10);
+
+
+        v1cap[0] = 1;
+        v1cap[1] = 3;
+        v1cap[2] = 2;
+        v1cap[3] = 1;
+        v1cap[4] = 2;
+        v1cap[5] = 3;
+        v1cap[6] = 3;
+        v1cap[7] = 1;
+        v1cap[8] = 2;
+        v1cap[9] = 3;
+
+        v2atmo[0] = 2;
+        v2atmo[1] = 2;
+        v2atmo[2] = 3;
+        v2atmo[3] = 3;
+        v2atmo[4] = 3;
+        v2atmo[5] = 2;
+        v2atmo[6] = 1;
+        v2atmo[7] = 1;
+        v2atmo[8] = 1;
+        v2atmo[9] = 2;
+
+        v3bio[0] = 3;
+        v3bio[1] = 3;
+        v3bio[2] = 3;
+        v3bio[3] = 2;
+        v3bio[4] = 3;
+        v3bio[5] = 3;
+        v3bio[6] = 1;
+        v3bio[7] = 2;
+        v3bio[8] = 1;
+        v3bio[9] = 2;
+
+        v4hidro[0] = 3;
+        v4hidro[1] = 2;
+        v4hidro[2] = 3;
+        v4hidro[3] = 2;
+        v4hidro[4] = 3;
+        v4hidro[5] = 2;
+        v4hidro[6] = 1;
+        v4hidro[7] = 3;
+        v4hidro[8] = 3;
+        v4hidro[9] = 2;
+
+        v5litos[0] = 2;
+        v5litos[1] = 2;
+        v5litos[2] = 2;
+        v5litos[3] = 2;
+        v5litos[4] = 1;
+        v5litos[5] = 3;
+        v5litos[6] = 3;
+        v5litos[7] = 3;
+        v5litos[8] = 1;
+        v5litos[9] = 1;
+
 
         /*
         changeText.text= System.IO.File.ReadAllText("Assets/atmo/"+temp+ ".txt");
@@ -39,66 +112,42 @@ public class setquestion2 : MonoBehaviour
         k = int.Parse(vidpov);
         //perevirka.text = k.ToString();
         */
-        
-         changeText.text = System.IO.File.ReadAllText("Assets/capital/" + temp + ".txt");
-         vidpov = System.IO.File.ReadAllText("Assets/vidpov_cap/" + temp + ".txt");
-         k = int.Parse(vidpov);
-         
-        /*
-        switch (color)
-        {
-            case "braun":
-                changeText.text = System.IO.File.ReadAllText("Assets/litos/" + temp + ".txt");
-                vidpov = System.IO.File.ReadAllText("Assets/vidpov_l/" + temp + ".txt");
-                break;
-
-            case "light_blue":
-                changeText.text = System.IO.File.ReadAllText("Assets/atmo/" + temp + ".txt");
-                vidpov = System.IO.File.ReadAllText("Assets/vidpov_a/" + temp + ".txt");
-                break;
-
-            case "blue":
-                changeText.text = System.IO.File.ReadAllText("Assets/hidro/" + temp + ".txt");
-                vidpov = System.IO.File.ReadAllText("Assets/vidpov_h/" + temp + ".txt");
-                break;
-
-            case "green":
-                changeText.text = System.IO.File.ReadAllText("Assets/bio/" + temp + ".txt");
-                vidpov = System.IO.File.ReadAllText("Assets/vidpov_b/" + temp + ".txt");
-                break;
-
-            case "yellow":
-                changeText.text = System.IO.File.ReadAllText("Assets/capital/" + temp + ".txt");
-                vidpov = System.IO.File.ReadAllText("Assets/vidpov_cap/" + temp + ".txt");
-                break;
 
 
-            case "poznach":
-                //відкрити іншу панель
-                break;
-
-            case "time":
-                //відкрити іншу панель
-                break;
-        }
-
-        perevirka.text = vidpov;
-        */
 
     }
+    void Update()
+    {
+        if (start)
+        {
+        temp = Random.Range(1, 10);
 
-      public void onClick1()
+        changeText.text = System.IO.File.ReadAllText("Assets/capital/" + temp + ".txt");
+        vidpov = v1cap[temp - 1];
+            start = !start;
+        }
+        
+    }
+
+    public void onClick1()
     {
         btn = 1;
         Point();
-       
+
+        if (stop) Utils();
+}
+
+    void Utils()
+    {
+setQuestion.SetActive(false);
+    GameScene.SetActive(true);
+     panel.SetActive(false);
     }
-
-
     public void onClick2()
     {
         btn = 2;
         Point();
+        if (stop) Utils();
     }
 
 
@@ -106,35 +155,51 @@ public class setquestion2 : MonoBehaviour
     {
         btn = 3;
         Point();
+        if(stop)
+        Utils();
     }
 
     public void Point()
     {
         //perevirka.text = points.ToString();
 
-        if (k==btn)
+        if (vidpov==btn)
         {
+            PlayerData.Score[PlayerData.play] += 10;
             //!!!!!!!!!! нарахування балів!!!!!!!!!!
-            points += 10;
-            
+            //        points += 10;
+
         }
         else
         {
-                points -= 5;
-            if (points < 5) { points = 0; } 
+            PlayerData.Score[PlayerData.play] -= 5;
+            //           points -= 5;
+                   if (PlayerData.Score[PlayerData.play] < 5) { PlayerData.Score[PlayerData.play] = 0; } 
+  
         }
+        if (PlayerData.Score[PlayerData.play] >= 30)
+        {
+            resultat.SetActive(true);
+            panel1.SetActive(true);
 
-        
-         perevirka.text = points.ToString();
+            GameScene.SetActive(false);
+            setQuestion.SetActive(false);
+            panel.SetActive(false);
+           stop = false;
+        }
+        //      if (PlayerData.Score[PlayerData.play]>=)
+        //  perevirka.text = btn.ToString();
+
+
+
+        // per2.text = .ToString();
+
+
 
     }
 
     
     // Update is called once per frame
-    void Update()
-    {
-       
-    }
-
+  
 
 }

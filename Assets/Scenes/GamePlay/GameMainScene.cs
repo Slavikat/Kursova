@@ -17,6 +17,8 @@ public class GameMainScene : MonoBehaviour
     static int i = 2;
 
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -80,7 +82,7 @@ public class GameMainScene : MonoBehaviour
         }
         
        
-             PlayerData.Pola[2] = "+5";
+             PlayerData.Pola[2] = "1";
          
              PlayerData.Pola[0] = "st";
              PlayerData.Pola[1] = "1";
@@ -132,11 +134,13 @@ public class GameMainScene : MonoBehaviour
         score1.text = PlayerData.Score[0].ToString();
         // score1.text = PlayerData.Klitynka[0].ToString();
         score2.text = PlayerData.Score[1].ToString();
-      //  score2.text = PlayerData.Klitynka[1].ToString();
+        //  score2.text = PlayerData.Klitynka[1].ToString();
+      //   score3.text = (PlayerData.Klitynka[0] - 1).ToString();
+     //   score4.text = (PlayerData.Klitynka[1] - 1).ToString();
         if (i >= 3)
         {
                      score3.text = PlayerData.Score[2].ToString(); 
-           // score3.text = PlayerData.Klitynka[2].ToString();
+          //  score3.text = PlayerData.Klitynka[2].ToString();
             if (i == 4)
             {
                            score4.text = PlayerData.Score[3].ToString();
@@ -144,59 +148,9 @@ public class GameMainScene : MonoBehaviour
             }
         }
 
-        if (PlayerData.stop)
-        {
-            PlayerData.stop = false;
-            Pyt();
-        }
-        
+       
  
     }
 
-    public static void Pyt()
-    {
-        Quest(PlayerData.Klitynka[PlayerData.play]-1);
-        
-    }
-    public static void Quest(int k)
-    {
-       if (PlayerData.Pola[k]== "v")
-        {
-            int rozd = Random.Range(1, 5);
-            PlayerData.Pola[k] = rozd.ToString();
-        }
-            switch (PlayerData.Pola[k])
-        {
-            case "1":
-
-                break;
-            case "2":
-                break;
-            case "3":
-                break;
-            case "4":
-                break;
-            case "5":
-                break;
-            case "p":
-
-                break;
-            case "+5":
-                PlayerData.Score[PlayerData.play] += 5;
-                break;
-            case "-5":
-                PlayerData.Score[PlayerData.play] -= 5;
-                break;
-            case "+15":
-                PlayerData.Score[PlayerData.play] +=15;
-                break;
-            case "-15":
-                PlayerData.Score[PlayerData.play] -= 15;
-                break;
-            case "st":
-                PlayerData.Score[PlayerData.play] += 5;
-                break;
-
-        }
-    }
+    
 }
