@@ -13,7 +13,8 @@ public class PlayerData : MonoBehaviour
     public static string[] Pola;
     public static bool stop;
     public static int play;
-
+    public static bool dice=true;
+    public static bool go = false;
     // Start is called before the first frame update
     void Start()
     {
