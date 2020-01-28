@@ -87,7 +87,14 @@ public class PlayerY : MonoBehaviour
     }
 
 
+    void questScene(int roz) {
+        setquestion2.rozd = roz;
+        GameScene3.SetActive(false);
+        setQuestion3.SetActive(true);
+        panel.SetActive(true);
 
+        setquestion2.start = true;
+    }
 
     public void Quest(int k)
     {
@@ -104,35 +111,27 @@ public class PlayerY : MonoBehaviour
 
             case "1":
 
-                GameScene3.SetActive(false);
-                setQuestion3.SetActive(true);
-                panel.SetActive(true);
-
-                setquestion2.start = true;
+                questScene(1);
                 Utils();
 
-                //       changeText.text = System.IO.File.ReadAllText("Assets/litos/" + temp + ".txt");
-                //       vidpov = System.IO.File.ReadAllText("Assets/vidpov_l/" + temp + ".txt");
                 break;
             case "2":
-                //       changeText.text = System.IO.File.ReadAllText("Assets/atmo/" + temp + ".txt");
-                //       vidpov = System.IO.File.ReadAllText("Assets/vidpov_a/" + temp + ".txt");
+
+                questScene(2);
                 Utils();
                 break;
             case "3":
-                //       changeText.text = System.IO.File.ReadAllText("Assets/hidro/" + temp + ".txt");
-                //      vidpov = System.IO.File.ReadAllText("Assets/vidpov_h/" + temp + ".txt");
+
+                questScene(3);
                 Utils();
                 break;
 
             case "4":
-                //       changeText.text = System.IO.File.ReadAllText("Assets/bio/" + temp + ".txt");
-                //      vidpov = System.IO.File.ReadAllText("Assets/vidpov_b/" + temp + ".txt");
+                questScene(4);
                 Utils();
                 break;
             case "5":
-                //      changeText.text = System.IO.File.ReadAllText("Assets/capital/" + temp + ".txt");
-                //      vidpov = System.IO.File.ReadAllText("Assets/vidpov_cap/" + temp + ".txt");
+                questScene(5);
                 Utils();
                 break;
             case "p":

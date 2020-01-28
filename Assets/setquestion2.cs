@@ -15,9 +15,7 @@ public class setquestion2 : MonoBehaviour
     public static  bool start;
     bool stop=true;
 
-    // public Image img;
-
-
+    
 
     bool newText=true;
     static int k;
@@ -31,7 +29,7 @@ public class setquestion2 : MonoBehaviour
 
 
     string color = "braun";
-
+    public static int rozd;
     int temp;
 
     public static int[] v1cap = new int[10];
@@ -39,7 +37,7 @@ public class setquestion2 : MonoBehaviour
     public static int[] v3bio = new int[10];
     public static int[] v4hidro = new int[10];
     public static int[] v5litos = new int[10];
-
+  
  
 
     void Start()
@@ -102,31 +100,58 @@ public class setquestion2 : MonoBehaviour
         v5litos[9] = 1;
 
 
-        /*
-        changeText.text= System.IO.File.ReadAllText("Assets/atmo/"+temp+ ".txt");
-        vidpov = System.IO.File.ReadAllText("Assets/vidpov_a/" + temp + ".txt");
-        */
-        /*
-        changeText.text = System.IO.File.ReadAllText("Assets/atmo/" + temp + ".txt");
-        vidpov= System.IO.File.ReadAllText("Assets/vidpova/" + temp + ".txt");
-        k = int.Parse(vidpov);
-        //perevirka.text = k.ToString();
-        */
-
+        
 
 
     }
     void Update()
     {
+        setQuest();
+        
+    }
+
+
+    public bool[,] povtor=new bool[5,10];
+
+
+    void setQuest()
+    {
         if (start)
         {
         temp = Random.Range(1, 10);
 
-        changeText.text = System.IO.File.ReadAllText("Assets/capital/" + temp + ".txt");
-        vidpov = v1cap[temp - 1];
+
+          
+                
+                changeText.text = System.IO.File.ReadAllText("Assets/"+rozd+"/" + temp + ".txt");
+           
+            switch (rozd)
+            {
+                case 1: 
+                    vidpov = v1cap[temp - 1];
+                    
+                        break;
+                case 2:
+                    vidpov = v2atmo[temp - 1];
+                    break;
+                case 3:
+                    vidpov = v3bio[temp - 1];
+                    break;
+                case 4:
+                    vidpov = v4hidro[temp - 1];
+                    break;
+                case 5:
+                    vidpov = v5litos[temp - 1];
+                    break;
+            } 
+   
+
+   
             start = !start;
         }
-        
+
+
+
     }
 
     public void onClick1()
@@ -161,19 +186,18 @@ public class setquestion2 : MonoBehaviour
 
     public void Point()
     {
-        //perevirka.text = points.ToString();
+       
 
         if (vidpov==btn)
         {
             PlayerData.Score[PlayerData.play] += 10;
-            //!!!!!!!!!! нарахування балів!!!!!!!!!!
-            //        points += 10;
+           
 
         }
         else
         {
             PlayerData.Score[PlayerData.play] -= 5;
-            //           points -= 5;
+       
                    if (PlayerData.Score[PlayerData.play] < 5) { PlayerData.Score[PlayerData.play] = 0; } 
   
         }
@@ -187,13 +211,10 @@ public class setquestion2 : MonoBehaviour
             panel.SetActive(false);
            stop = false;
         }
-        //      if (PlayerData.Score[PlayerData.play]>=)
-        //  perevirka.text = btn.ToString();
+        
 
 
-
-        // per2.text = .ToString();
-
+      
 
 
     }
