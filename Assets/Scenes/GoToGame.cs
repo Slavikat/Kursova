@@ -16,11 +16,6 @@ public class GoToGame : MonoBehaviour
     public GameObject Pl3;
     public GameObject Pl4;
 
-    public Image PanelPl1;
-    public Image PanelPl2;
-    public Image PanelPl3;
-    public Image PanelPl4;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -92,43 +87,10 @@ public class GoToGame : MonoBehaviour
             Image img = GameObject.Find("Panel (1)").GetComponent<Image>();
         
             img.color = UnityEngine.Color.clear;
-
-
-            Utils2(0, PanelPl1);
-            Utils2(1, PanelPl2);
-            if (PlayerData.sumPlayer >= 3)
-            {
-
-                Utils2(3, PanelPl3);
-                if (PlayerData.sumPlayer == 4)
-                {
-
-                    Utils2(3, PanelPl4);
-                }
-            }
             
         }
 
         
-    }
-
-    void Utils2(int j, Image panel)
-    {
-        switch (PlayerData.Color[j])
-        {
-            case "red":
-                panel.color = UnityEngine.Color.red;
-                break;
-            case "yellow":
-                panel.color = UnityEngine.Color.yellow;
-                break;
-            case "blue":
-                panel.color = UnityEngine.Color.blue;
-                break;
-            case "green":
-                panel.color = UnityEngine.Color.green;
-                break;
-        }
     }
    
 
