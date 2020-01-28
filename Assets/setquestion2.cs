@@ -100,17 +100,7 @@ public class setquestion2 : MonoBehaviour
         v5litos[9] = 1;
 
 
-        /*
-        changeText.text= System.IO.File.ReadAllText("Assets/atmo/"+temp+ ".txt");
-        vidpov = System.IO.File.ReadAllText("Assets/vidpov_a/" + temp + ".txt");
-        */
-        /*
-        changeText.text = System.IO.File.ReadAllText("Assets/atmo/" + temp + ".txt");
-        vidpov= System.IO.File.ReadAllText("Assets/vidpova/" + temp + ".txt");
-        k = int.Parse(vidpov);
-        //perevirka.text = k.ToString();
-        */
-
+        
 
 
     }
@@ -131,7 +121,7 @@ public class setquestion2 : MonoBehaviour
         temp = Random.Range(1, 10);
 
 
-            if (povtor[rozd, temp] == false) {
+          
                 
                 changeText.text = System.IO.File.ReadAllText("Assets/"+rozd+"/" + temp + ".txt");
            
@@ -153,7 +143,7 @@ public class setquestion2 : MonoBehaviour
                 case 5:
                     vidpov = v5litos[temp - 1];
                     break;
-            } }
+            } 
    
 
    
@@ -196,19 +186,18 @@ public class setquestion2 : MonoBehaviour
 
     public void Point()
     {
-        //perevirka.text = points.ToString();
+       
 
         if (vidpov==btn)
         {
             PlayerData.Score[PlayerData.play] += 10;
-            //!!!!!!!!!! нарахування балів!!!!!!!!!!
-            //        points += 10;
+           
 
         }
         else
         {
             PlayerData.Score[PlayerData.play] -= 5;
-            //           points -= 5;
+       
                    if (PlayerData.Score[PlayerData.play] < 5) { PlayerData.Score[PlayerData.play] = 0; } 
   
         }
@@ -222,13 +211,10 @@ public class setquestion2 : MonoBehaviour
             panel.SetActive(false);
            stop = false;
         }
-        //      if (PlayerData.Score[PlayerData.play]>=)
-        //  perevirka.text = btn.ToString();
+        
 
 
-
-        // per2.text = .ToString();
-
+      
 
 
     }

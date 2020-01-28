@@ -35,12 +35,12 @@ public class GameMainScene : MonoBehaviour
         name2.text = PlayerData.Name[1];
         if (PlayerData.sumPlayer >= 3)
         {
-         //   i = 3;
+         
             name3.text = PlayerData.Name[2];
             if (PlayerData.sumPlayer == 4)
             {
                 name4.text = PlayerData.Name[3];
-        //        i = 4;
+        
             }
         }
        
@@ -60,17 +60,7 @@ public class GameMainScene : MonoBehaviour
             }
         }
 
-     //   score1.text = PlayerData.Score[0].ToString();
-    //    score2.text = PlayerData.Score[1].ToString();
-
-    //    if (i >= 3)
-    //    {
-     //       score3.text = PlayerData.Score[3].ToString();
-    //        if (i = 4)
-    //        {
-     //           score4.text = PlayerData.Score[4].ToString();
-    //        }
-    //    }
+    
 
         PlayerData.Klitynka[0] = 1;
         PlayerData.Klitynka[1] = 1;
@@ -89,44 +79,47 @@ public class GameMainScene : MonoBehaviour
          
         PlayerData.Pola[0] = "st";
         PlayerData.Pola[1] = "1";
-        PlayerData.Pola[2] = "1";
+        PlayerData.Pola[2] = "+5";
         PlayerData.Pola[3] = "5";
         PlayerData.Pola[4] = "1";
-        PlayerData.Pola[5] = "+5";
+        PlayerData.Pola[5] = "1";
         PlayerData.Pola[6] = "p";
         PlayerData.Pola[7] = "-5";
-        PlayerData.Pola[8] = "1";
+        PlayerData.Pola[8] = "5";
         PlayerData.Pola[9] = "v";
-        PlayerData.Pola[10] = "p";
-        PlayerData.Pola[11] = "2";
-        PlayerData.Pola[12] = "-5";
-        PlayerData.Pola[13] = "2";
+        PlayerData.Pola[10] = "+15";
+
+        PlayerData.Pola[11] = "p";
+        PlayerData.Pola[12] = "2";
+        PlayerData.Pola[13] = "-5";
         PlayerData.Pola[14] = "2";
-        PlayerData.Pola[15] = "v";
-        PlayerData.Pola[16] = "p";
+        PlayerData.Pola[15] = "5";
+        PlayerData.Pola[16] = "v";
         PlayerData.Pola[17] = "5";
-        PlayerData.Pola[18] = "p";
-        PlayerData.Pola[19] = "+15";
-        PlayerData.Pola[20] = "2";
+        PlayerData.Pola[18] = "2";
+        PlayerData.Pola[19] = "p";
+        PlayerData.Pola[20] = "p";
+
         PlayerData.Pola[21] = "3";
-        PlayerData.Pola[22] = "+5";
-        PlayerData.Pola[23] = "3";
-        PlayerData.Pola[24] = "p";
-        PlayerData.Pola[25] = "5";
-        PlayerData.Pola[26] = "3";
+        PlayerData.Pola[22] = "5";
+        PlayerData.Pola[23] = "+5";
+        PlayerData.Pola[24] = "3";
+        PlayerData.Pola[25] = "p";
+        PlayerData.Pola[26] = "5";
         PlayerData.Pola[27] = "3";
-        PlayerData.Pola[28] = "v";
-        PlayerData.Pola[29] = "p";
+        PlayerData.Pola[28] = "p";
+        PlayerData.Pola[29] = "v";
         PlayerData.Pola[30] = "-15";
-        PlayerData.Pola[31] = "4";
-        PlayerData.Pola[32] = "4";
-        PlayerData.Pola[33] = "-5";
-        PlayerData.Pola[34] = "p";
-        PlayerData.Pola[35] = "+5";
-        PlayerData.Pola[36] = "v";
-        PlayerData.Pola[37] = "4";
-        PlayerData.Pola[38] = "5";
-        PlayerData.Pola[39] = "4";
+
+        PlayerData.Pola[31] = "5";
+        PlayerData.Pola[32] = "+5";
+        PlayerData.Pola[33] = "4";
+        PlayerData.Pola[34] = "4";
+        PlayerData.Pola[35] = "v";
+        PlayerData.Pola[36] = "p";
+        PlayerData.Pola[37] = "5";
+        PlayerData.Pola[38] = "p";
+        PlayerData.Pola[39] = "-5";
 
 
     }
@@ -135,19 +128,17 @@ public class GameMainScene : MonoBehaviour
     void Update()
     {
         score1.text = PlayerData.Score[0].ToString();
-        // score1.text = PlayerData.Klitynka[0].ToString();
+  
         score2.text = PlayerData.Score[1].ToString();
-        //  score2.text = PlayerData.Klitynka[1].ToString();
-      //   score3.text = (PlayerData.Klitynka[0] - 1).ToString();
-     //   score4.text = (PlayerData.Klitynka[1] - 1).ToString();
+     
         if (i >= 3)
         {
-                     score3.text = PlayerData.Score[2].ToString(); 
-          //  score3.text = PlayerData.Klitynka[2].ToString();
+         score3.text = PlayerData.Score[2].ToString(); 
+         
             if (i == 4)
             {
-                           score4.text = PlayerData.Score[3].ToString();
-            //    score4.text = PlayerData.Klitynka[3].ToString();
+              score4.text = PlayerData.Score[3].ToString();
+           
             }
         }
 
