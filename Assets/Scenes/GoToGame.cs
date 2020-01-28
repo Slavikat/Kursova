@@ -21,6 +21,15 @@ public class GoToGame : MonoBehaviour
     public Image PanelPl3;
     public Image PanelPl4;
 
+    public Button setColorRed;
+    public Button setColorBlue;
+    public Button setColorGreen;
+    public Button setColorYellow;
+
+    bool g, r, y, b;
+
+    bool col = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,37 +44,112 @@ public class GoToGame : MonoBehaviour
 
     public void setColorR()
     {
+        //     setColorRed.interactable = false;
+        r = true;
         Utils("red");
     }
     public void setColorG()
     {
+        g = true;
+     //   setColorGreen.interactable = false;
         Utils("green");
     }
     public void setColorB()
     {
+        b = true;
+    //    setColorBlue.interactable = false;
         Utils("blue");
     }
     public void setColorY()
     {
+        y = true;
+     //   setColorYellow.interactable = false;
         Utils("yellow");
     }
     public void Utils(string color)
     {
         PlayerData.Color[i] = color;
+
+        col = true;
     }
 
     public void GoGame()
     {
 
-          
-       // PanelZ.localScale = new Vector3(0, 0);
+        if (!col)
+        {
+            if (!r)
+            {
+                Utils("red");
+                r = true;
+            }
+            else if (!g)
+            {
+                Utils("green");
+                g = true;
+            }
+            else if (!b)
+            {
+                Utils("blue");
+                b = true;
+            }
+            else if (!y)
+            {
+                Utils("yellow");
+                y = true;
+            }
+        }
+        col = false;
+
+        if (r)
+        {
+            setColorRed.interactable = false;
+        }
+        if (g)
+        {
+            setColorGreen.interactable = false;
+        }
+        if (b)
+        {
+            setColorBlue.interactable = false;
+        }
+        if (y)
+        {
+            setColorYellow.interactable = false;
+        }
+
+        // PanelZ.localScale = new Vector3(0, 0);
         if (i < PlayerData.sumPlayer)
         {
+            if (InName.text.Length > 0)
+            {
             PlayerData.Name[i] = InName.text;
+            }
+            else
+            {
+                PlayerData.Name[i] = "Гравець "+ (i+1).ToString();
+            }
             InName.text = string.Empty;
-            //     InName.text =i.ToString();
             i++;
         }
+
+   //     if (!col)
+   //     {
+    /*        for(int j=i; j==0; j--)
+            {
+                if (PlayerData.Name[j] != "red") {
+                    setColorRed.interactable = false;
+                    Utils("red");
+                }
+
+                if (PlayerData.Name[j] != "green") setColorG();
+
+                if (PlayerData.Name[j] != "blue") setColorB();
+
+                if (PlayerData.Name[j] != "yellow") setColorY();
+            }*/
+     //   }
+     //   col = false;
 
         if (i == PlayerData.sumPlayer)
         {
@@ -99,7 +183,7 @@ public class GoToGame : MonoBehaviour
             if (PlayerData.sumPlayer >= 3)
             {
 
-                Utils2(3, PanelPl3);
+                Utils2(2, PanelPl3);
                 if (PlayerData.sumPlayer == 4)
                 {
 
